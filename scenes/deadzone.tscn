@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cdh1btwd6p6vd"]
+
+[ext_resource type="Script" uid="uid://oul6xilx6fi0" path="res://script/deadzone.gd" id="1_t3cga"]
+
+[node name="deadzone" type="Area2D" unique_id=749174448]
+collision_mask = 3
+script = ExtResource("1_t3cga")
+
+[node name="Timer" type="Timer" parent="." unique_id=576445066]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
